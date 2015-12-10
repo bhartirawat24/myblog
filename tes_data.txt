@@ -1,2 +1,23 @@
-link heroku : https://devcenter.heroku.com/articles/getting-started-with-django
-install heroku command: wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+1. heroku:
+-------------------
+a)link heroku : https://devcenter.heroku.com/articles/getting-started-with-django
+b)install heroku command: wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+c)start heroku : heroku local:start or heroku local
+d)stop heroku CTRL+C
+e)pip freeze > requirements.txt
+
+
+2.model image: 
+---------------
+a) sudo apt-get install graphviz libgraphviz-dev graphviz-dev python-pygraphviz
+b) installed apps -  'django_extensions',
+c) pip install django django-extensions
+d) ./manage.py graph_models -a -g -o my_project_visualized.png
+e) if this error comes
+CommandError: Neither pygraphviz nor pydot could be found to generate the image
+f) then install-->> pip install pygraphviz
+
+
+3.make requirement.txt
+-----------------------
+pip freeze > requirements.txt

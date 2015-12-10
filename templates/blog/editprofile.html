@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+		<div>
+			<form class='editprofile_form' method='post' action={% url 'editprofile' request.user.id %}>
+			<h2>Edit Profile</h2>
+			
+				{% csrf_token %}
+				
+				first name: <input type='text' value='{{ profile.user.first_name }}' name='fname' /><br /><br>
+				last name<input type='text' value='{{ profile.user.last_name }}' name='lname' /><br /><br>				
+				contact no.<input type='text' value='{{ profile.contact }}' name='phn' /><br /><br>
+				<input type='submit' value='Save User' /><br /><br>
+				<a href='{% url "changepassword" %}'>Change Password</a> 
+			</form>
+			<a href="{% url 'image' %}">Upload image</a>
+		</div>
+
+{% endblock %}

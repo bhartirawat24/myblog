@@ -1,0 +1,9 @@
+{% block content %}
+	<h1> Verify Your Email </h1>
+	<form  method="post"  action={% url 'verify-email' %}>
+		{% csrf_token %}
+		Email:<input type="text" value="" name="email" required> <br>
+		<input type="submit" value='verify email'>
+	</form>
+
+{% endblock %}

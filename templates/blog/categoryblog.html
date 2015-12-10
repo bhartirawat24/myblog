@@ -1,0 +1,15 @@
+{% block title %}<h1>Category wise blogs</h1>{% endblock %}
+{% block content %}
+	<form method="post" action={% url 'categoryblog' %}>
+		{% csrf_token %}
+		Category<select name='category'>
+			{% for category in categories %}
+				<option value={{ category.id }}>{{ category.name }}</option>
+			{% endfor %}
+		</select><br> <br>
+		<input type="submit" value="Find this category blog?">
+	</form>
+	
+	
+
+{% endblock %}

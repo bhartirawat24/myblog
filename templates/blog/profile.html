@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% block title %}User Profile{% endblock %}
+{% block content %}
+	{% if user.is_authenticated %}
+		
+		<b>username:</b> {{ user.username }} &nbsp <br>
+		<b>first name:</b> {{ user.first_name }}&nbsp <br>
+		<b>last name:</b> {{ user.last_name }}&nbsp <br>
+		<b>email:</b> {{ user.email }} &nbsp <br>
+		<b>Image:</b>{{ profile.image }}&nbsp <br>
+		<b>gender:</b> {{ profile.gender }}&nbsp<br>
+		<b>contact:</b> {{ profile.contact }} <br><br><br>
+		<a href='{% url "editprofile" request.user.id %}'>Edit Profile</a><br>
+		<a href='{% url "addblog" %}'>Add blog</a><br>
+		<a href='{% url "blogs" %}'>Blogs</a><br>
+		<a href='{% url "myblogs" %}'>My Blogs</a><br>
+		<a href='{% url "categoryblog" %}'>Category Blogs</a><br>
+		<a href='{% url "changepassword" %}'>Change Password</a> <br>
+		<a href='{% url "logout" %}'>Logout</a> 
+	{% endif %}
+	
+	{% if not user.is_authenticated %}
+		Login required
+	{% endif %}
+	<div class='image'>
+		<img src="{{ MEDIA_URL }}{{profile.image}}" alt="user image" style="width:400px;height:400px;">
+		
+	</div>
+{% endblock %}

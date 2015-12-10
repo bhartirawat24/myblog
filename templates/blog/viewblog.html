@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% block title %}Index Blog{% endblock %}
+{% block content %}
+		<b>Id:</b>{{ blogs.id }}<br>
+		<b>Title:</b>{{ blogs.title }}<br>
+		<b>Description:</b> {{ blogs.description }}<br>
+		<b>Category:</b> {{ blogs.category.name }}<br><br>
+		
+{% endblock %}

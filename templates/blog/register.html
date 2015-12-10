@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+	<div style="color:green">{{message}}</div>
+	<div class='container'>
+		<form class='signup_form' method='post' action={% url 'register' %}>
+			{% csrf_token %}
+			<h2>Sign  up Here</h2>
+			<p>first name:&nbsp <input type='text' value='' name='fname' required/><br /></p>
+			<p>last name&nbsp <input type='text' value='' name='lname' /><br /></p>
+			<p>Email&nbsp <input type='email' value='' name='email' required/><br /></p>
+			<p>Password&nbsp <input type='password' value='' name='pass' required/><br /></p>
+			<p>confirm Pass&nbsp <input type='password' value='' name='cpass' required/><br /></p>
+			<p>contact no.&nbsp <input type='text' value='' name='phn' /><br /></p>
+			<p>Gender&nbsp Male<input type='radio' value='1' name='gen' checked /> 
+			Female<input type='radio' value='0' name='gen' /><br /><br /></p>
+			
+			
+			<input type='submit' value='register' />
+		</form>
+		</div>
+
+
+{% endblock %}

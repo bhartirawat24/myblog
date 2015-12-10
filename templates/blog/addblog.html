@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+	<h2> Add A Blog </h2>
+	<form class='blog' method='post' action={% url 'addblog'%}>
+		{% csrf_token %}
+		Title<input type='text' value='' name='title' required/></br></br>
+		Description<input type='textarea' value='' name='desc' /></br></br>
+		Category<select name='blogcat' required>
+					{% for category in categories %}
+						<option value={{ category.id }}>{{ category.name }}</option>
+					{% endfor %}
+				</select></br></br>
+		<input type="submit" value="Add Blog" />
+	</form>
+
+	
+	
+	
+{% endblock %}

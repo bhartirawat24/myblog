@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block title %}<h1>Reset your password.</h1>{% endblock %}
+{% block content %}
+    <form class='resetpass_form' method="post" action={% url 'verify-forgetpass' email=user.email key=profile.activationkey %}>
+    	{% csrf_token %}
+		New Password<input type="password" value="" name="pass" required>
+		Confirm Password<input type="password" value="" name="cpass" required>
+		<input type="submit" value="Reset Password">
+	</form>
+{% endblock %}

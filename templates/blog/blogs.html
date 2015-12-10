@@ -1,0 +1,23 @@
+{% block title %}<h1>All Blogs</h1>{% endblock %}
+{% block content %}
+	<table style="border: 2px solid black;">
+	<tbody><tr style="border: 1px solid black;">
+	<th style="border: 1px solid black;">Title</th>
+	<th style="border: 1px solid black;">Category</th>
+	<th style="border: 1px solid black;">Description</th>
+	<th style="border: 1px solid black;">Actions</th>
+	</tr>
+	{% for blog in blogs %}
+		<tr>
+			<td>{{ blog.title }}</td>
+			<td>{{ blog.category.name }}</td>
+			<td>{{ blog.description }}</td>
+			<td><a href="{% url 'viewblog' blog.id %}">View</a><a href="{% url 'editblog' blog.id %}">Edit Blog</a><a href="{% url 'deleteblog' blog.id %}">Delete Blog</ta></td>
+		</tr>
+	{% endfor %}
+		
+	</tbody>
+	</table>
+	
+
+{% endblock %}

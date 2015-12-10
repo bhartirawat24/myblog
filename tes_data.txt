@@ -1,0 +1,2 @@
+link heroku : https://devcenter.heroku.com/articles/getting-started-with-django
+install heroku command: wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh

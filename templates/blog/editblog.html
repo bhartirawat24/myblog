@@ -1,0 +1,16 @@
+<h1>Edit your Blog</h1>
+{% block content %}
+	
+	<form method="post" action={% url 'editblog' blogs.id %}>
+		{% csrf_token %}
+		Title<input type='text' value='{{ blogs.title }}' name='title' /></br></br>
+		Description<input type='textarea' value='{{ blogs.description }}' name='desc' /></br></br>
+		Category<select name='blog'>
+					{% for category in categories %}
+						<option value={{ category.id }}>{{ category.name }}</option>
+					{% endfor %}
+				</select></br></br>
+		<input type="submit" value="Save Blog" />
+	</form>
+	
+{% endblock %}

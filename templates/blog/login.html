@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+	<div class='container1'>
+		<form class="login" method="post" action={% url "login" %}>
+			{% csrf_token %}
+			<h2>Login Here</h2>
+			Email<input type='email' value='' name='email' /><br /><br>
+			Password<input type='password' value='' name='pass' /><br /><br />
+			<input type='submit' value='Login' /> &nbsp <input type='submit' value="Forget Password" name="fpass"/>
+		</form>
+	</div>
+{% endblock %}

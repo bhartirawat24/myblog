@@ -1,0 +1,13 @@
+{% block title %}<h1>My Image</h1>{% endblock %}
+{% block content %}
+	<div>
+		<form class='image_form' method='post' action={% url 'image' %} enctype="multipart/form-data">
+			{% csrf_token %}
+			
+			<b>Image:</b>&nbsp&nbsp&nbsp&nbsp<input type="file" name='image' id='image'><input type="submit" name="" value="Upload Image"><br><br>
+		</form>
+	</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block content %}
+	<form method='post' action={% url 'rating' blog.id %}> 
+			{% csrf_token %}
+			<b>Rate Our Blog</b>&nbsp&nbsp&nbsp Excellent<input type="radio" value="5" name='rate'>&nbspBest <input type="radio" value="4" name='rate'>&nbsp Good<input type="radio" value="3" name='rate'>&nbsp Average<input type="radio" value="2" name='rate'>&nbsp Not Satisfying<input type="radio" value="1" name='rate'>
+			<input type="submit" value="submit">
+	</form>
+	
+
+{% endblock %}
